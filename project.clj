@@ -7,6 +7,7 @@
      [hiccup "1.0.4"]
      [hiccup-bootstrap "0.1.2"]
      [ring/ring-core "1.2.1"]
+     [crypto-password "0.1.3"]
      [ring/ring-jetty-adapter "1.2.1"]]
   :plugins [[lein-ring "0.8.10"]]
 

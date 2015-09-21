@@ -2,11 +2,13 @@
   (:use
     compojure.core
     justlink.views
-    hiccup.bootstrap.middleware))
+    justlink.controllers
+    hiccup.bootstrap.middleware
+    ring.middleware.params))
 
 (defroutes handler
   (GET "/" [] (login))
-  (POST "/login" [] "This is you trying to log in")
+  (POST "/login" req ((wrap-params process-login) req))
   (GET "/test" [] (str "testing")))
 
 (def app
