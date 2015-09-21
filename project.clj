@@ -5,7 +5,6 @@
      [org.postgresql/postgresql "9.4-1201-jdbc41"]
      [compojure "1.1.6"]
      [hiccup "1.0.4"]
-     [hiccup-bootstrap "0.1.2"]
      [ring/ring-core "1.2.1"]
      [crypto-password "0.1.3"]
      [ring/ring-jetty-adapter "1.2.1"]]
