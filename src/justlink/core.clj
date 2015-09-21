@@ -1,6 +1,8 @@
-(ns justlink.core)
+(ns justlink.core
+  (:use
+    compojure.core
+    justlink.views))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defroutes app
+  (GET "/" [] (index))
+  (GET "/test" [] (str "testing")))
