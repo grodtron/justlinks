@@ -6,7 +6,7 @@
 
 (defn value-to-json-pgobject [value]
   (doto (PGobject.)
-    (.setType "json")
+    (.setType "jsonb")
     (.setValue (json/write-str value))))
 
 (extend-protocol jdbc/ISQLValue
@@ -22,6 +22,6 @@
     (let [type  (.getType  pgobj)
           value (.getValue pgobj)]
       (case type
-        "json" (json/read-str value :key-fn keyword)
+        "jsonb" (json/read-str value :key-fn keyword)
         "citext" (str value)
         :else value))))

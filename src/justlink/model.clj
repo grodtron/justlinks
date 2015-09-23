@@ -20,10 +20,10 @@
 (defn are-friends? [user1 user2]
   (not (empty?
          (sql/query db
-                    "SELECT * FROM friends WHERE a=? AND b=?"
+                    ["SELECT * FROM friends WHERE a=? AND b=?"
                     ; user id a is always greater than user id b
                     (max user1 user2)
-                    (min user1 user2)))))
+                    (min user1 user2)]))))
 
 (defn send-link! [to-user from-user link-data]
   (if (are-friends? to-user from-user)
