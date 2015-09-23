@@ -1,14 +1,3 @@
 # justlink
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+A simple link sharing website. Just a personal project, will be useful if it ever works, and it's a good excuse to learn Clojure.
