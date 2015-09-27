@@ -7,7 +7,9 @@
      [compojure "1.4.0"]
      [hiccup "1.0.5"]
      [ring "1.4.0"]
-     [crypto-password "0.1.3"]]
+     [clj-http "2.0.0"] ; HTTP requests
+     [enlive "1.1.6"]   ; HTML parsing
+     [crypto-password "0.1.3"]] ; Password hashing
   :plugins [[lein-ring "0.9.6"]]
 
   :ring {:handler justlink.core/app

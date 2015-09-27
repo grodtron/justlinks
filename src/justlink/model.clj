@@ -25,6 +25,23 @@
                     (max user1 user2)
                     (min user1 user2)]))))
 
+; Gets the id of an existing entry in the 'links' table for a given url
+; returns nil if there is no such entry
+(defn get-link-id [url]
+  (let [result
+        (first (sql/query db ["SELECT id FROM links WHERE url=?" url]))]
+    (if (nil? result)
+      nil
+      (result :id))))
+
+(defn get-or-create-link! [url]
+  (let [id (get-link-id url)]
+    (if (not (nil? id))
+      id ; if it's not nil, just return it!
+      ; in this case, the id is nil, so we have to create a new entry .... this is
+      ; where it gets interesting :P
+
+
 (defn send-link! [to-user from-user link-data]
   (if (are-friends? to-user from-user)
     (sql/insert! db
